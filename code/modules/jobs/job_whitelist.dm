@@ -33,12 +33,12 @@
 		play_records[rtype] = rtype
 
 	qdel(whitelist_read)
-	
+
 	if(!whitelists["leadership"])					// if they do not have leadership whitelist, remove leadership whitelist positions
 		for(var/rtypeWL in GLOB.command_positions)
 			play_records[rtypeWL] = 0
-	/*
-	
+
+
 	if(!whitelists["faction"])							// if they do not have faction whitelist, remove faction whitelist positions This whitelist is for all roles.
 		for(var/rtypeWL in GLOB.faction_whitelist_positions)
 			play_records[rtypeWL] = 0
@@ -58,7 +58,17 @@
 	if(!whitelists["faction_legion"])					// if they do not have faction_legion whitelist, remove faction_legion whitelist positions
 		for(var/rtypeWL in GLOB.legion_positions)
 			play_records[rtypeWL] = 0
+	if(!whitelists["faction_ncr"])
+		for(var/rtypeWL in GLOB.ncr_positions)
+			play_records[rtypeWL] = 0
+	if(!whitelists["faction_enclave"])
+		for(var/rtypeWL in GLOB.enclave_positions)
+			play_records[rtypeWL] = 0
 
+	if(!whitelists["faction_khan"])
+		for(var/rtypeWL in GLOB.khan_positions)
+			play_records[rtypeWL] = 0
+/*
 	if(!whitelists["faction_vault"])					// if they do not have faction_vault whitelist, remove faction_vault whitelist positions
 		for(var/rtypeWL in GLOB.vault_positions)
 			play_records[rtypeWL] = 0
@@ -66,15 +76,19 @@
 	if(!whitelists["faction_vault"])					// if they do not have faction_vault whitelist, remove faction_vault whitelist positions
 		for(var/rtypeWL in GLOB.vault_positions)
 			play_records[rtypeWL] = 0
-
+*/
 	if(whitelists["faction"])
 		for(var/rtypeWL in GLOB.faction_whitelist_positions)
+			play_records[rtypeWL] = rtypeWL
+
+	if(whitelists["faction_enclave"])
+		for(var/rtypeWL in GLOB.enclave_positions)
 			play_records[rtypeWL] = rtypeWL
 
 	if(whitelists["vetranger"])
 		for(var/rtypeWL in GLOB.ncr_rangervet_positions)
 			play_records[rtypeWL] = rtypeWL
-	*/
+
 	if(whitelists["leadership"])
 		for(var/rtypeWL in GLOB.command_positions)
 			play_records[rtypeWL] = rtypeWL
