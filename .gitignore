@@ -3,6 +3,7 @@
 #Ignore everything in datafolder and subdirectories
 /data/**/*
 /tmp/**/*
+/config/**/*
 
 #Ignore byond config folder.
 /cfg/**/*
@@ -198,5 +199,3 @@ Temporary Items
 start_server.sh
 tgui/public/tgui.bundle.css
 tgui/public/tgui.bundle.js
-
-/config
