@@ -34,6 +34,10 @@
 
 	qdel(whitelist_read)
 
+	if(whitelists["leadership"])
+		for(var/rtypeWL in GLOB.command_positions)
+			play_records[rtypeWL] = rtypeWL
+
 	if(!whitelists["leadership"])					// if they do not have leadership whitelist, remove leadership whitelist positions
 		for(var/rtypeWL in GLOB.command_positions)
 			play_records[rtypeWL] = 0
@@ -77,6 +81,7 @@
 		for(var/rtypeWL in GLOB.vault_positions)
 			play_records[rtypeWL] = 0
 */
+
 	if(whitelists["faction"])
 		for(var/rtypeWL in GLOB.faction_whitelist_positions)
 			play_records[rtypeWL] = rtypeWL
@@ -89,7 +94,5 @@
 		for(var/rtypeWL in GLOB.ncr_rangervet_positions)
 			play_records[rtypeWL] = rtypeWL
 
-	if(whitelists["leadership"])
-		for(var/rtypeWL in GLOB.command_positions)
-			play_records[rtypeWL] = rtypeWL
+
 	prefs.job_whitelists = play_records
